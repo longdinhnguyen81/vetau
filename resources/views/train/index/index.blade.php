@@ -54,10 +54,10 @@
                     </div>
                     <div class="row">
                         <div class="col-xl-3 col-lg-6 col-md-6">
-                            <a href="hotel-detail.html" class="grid_item">
+                            <a class="grid_item">
                                 <figure>
                                     <div class="score"></div>
-                                    <img src="/templates/train/img/hotel.png" class="img-fluid" alt="">
+                                    <img src="/templates/train/img/hotel.png" class="img-fluid" alt="Đặt vé tàu đi Lý Sơn">
                                     <div class="info">
                                         <h3>B1: Tìm và chọn chuyến tàu</h3>
                                     </div>
@@ -66,10 +66,10 @@
                         </div>
                         <!-- /grid_item -->
                         <div class="col-xl-3 col-lg-6 col-md-6">
-                            <a href="hotel-detail.html" class="grid_item">
+                            <a class="grid_item">
                                 <figure>
                                     <div class="score"></div>
-                                    <img src="/templates/train/img/hotel_2.jpg" class="img-fluid" alt="">
+                                    <img src="/templates/train/img/info.png" class="img-fluid" alt="Đặt vé tàu đi Lý Sơn">
                                     <div class="info">
                                         <h3>B2: Điền thông tin cá nhân vào mẫu</h3>
                                     </div>
@@ -78,10 +78,10 @@
                         </div>
                         <!-- /grid_item -->
                         <div class="col-xl-3 col-lg-6 col-md-6">
-                            <a href="hotel-detail.html" class="grid_item">
+                            <a class="grid_item">
                                 <figure>
                                     <div class="score"></div>
-                                    <img src="/templates/train/img/hotel_3.jpg" class="img-fluid" alt="">
+                                    <img src="/templates/train/img/checkout.png" class="img-fluid" alt="Đặt vé tàu đi Lý Sơn">
                                     <div class="info">
                                         <h3>B3: Chọn hình thức thanh toán</h3>
                                     </div>
@@ -90,10 +90,10 @@
                         </div>
                         <!-- /grid_item -->
                         <div class="col-xl-3 col-lg-6 col-md-6">
-                            <a href="hotel-detail.html" class="grid_item">
+                            <a class="grid_item">
                                 <figure>
                                     <div class="score"></div>
-                                    <img src="/templates/train/img/hotel_4.jpg" class="img-fluid" alt="">
+                                    <img src="/templates/train/img/success.png" class="img-fluid" alt="Đặt vé tàu đi Lý Sơn">
                                     <div class="info">
                                         <h3>B4: Thanh toán theo hướng dẫn và nhận email hướng dẫn lấy vé tàu.</h3>
                                     </div>
@@ -222,4 +222,16 @@
             <!--/call_section-->
         </main>
         <!-- /main -->
+@stop
+
+@section('meta')
+    <title>Mua vé tàu siêu tốc đi Lý Sơn</title>
+    <meta name="keywords" content="ve tau ly son, ve tau di ly son, vé tàu siêu tốc đi lý sơn, vé tàu đi lý sơn, mua vé tàu lý sơn, mua vé tàu lý sơn online">
+    <meta name="news_keywords" content="ve tau ly son, ve tau di ly son, vé tàu siêu tốc đi lý sơn, vé tàu đi lý sơn, mua vé tàu lý sơn, mua vé tàu lý sơn online">
+    <meta name="description" content="Đại lý vé tàu độc quyền của tàu super Biển Đông đi Lý Sơn với thời lượng 35-40 phút ra đảo, Đại lý vé tàu online ra đảo Lý Sơn">
+    <meta property="og:title" itemprop="name" content="Mua vé tàu siêu tốc đi Lý Sơn">    
+    <meta property="og:url" itemprop="url" content="https://www.muavetaulyson.com">
+    <meta property="og:description" content="Đại lý vé tàu độc quyền của tàu super Biển Đông đi Lý Sơn với thời lượng 35-40 phút ra đảo, Đại lý vé tàu online ra đảo Lý Sơn">
+    <meta content="/templates/train/img/super-bien-dong.jpg" property="og:image" itemprop="thumbnailUrl" />
+    <meta rel="canonical" href="https://www.muavetaulyson.com" />
 @stop

@@ -4,19 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Panagea - Premium site template for travel agencies, hotels and restaurant listing.">
-    <meta name="author" content="Ansonika">
-    <title>Panagea | Premium site template for travel agencies, hotels and restaurant listing.</title>
-
-    <!-- Favicons-->
-    <link rel="shortcut icon" href="/templates/train/img/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" type="image/x-icon" href="/templates/train/img/apple-touch-icon-57x57-precomposed.png">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="/templates/train/img/apple-touch-icon-72x72-precomposed.png">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="/templates/train/img/apple-touch-icon-114x114-precomposed.png">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="/templates/train/img/apple-touch-icon-144x144-precomposed.png">
-
+    @yield('meta')
     <!-- GOOGLE WEB FONT -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800" rel="stylesheet">
 
@@ -68,7 +56,7 @@
             </div>
             <ul id="top_menu">
                 <li><a href="{{ route('train.cart.cart') }}" class="cart-menu-btn" title="Cart"><strong>
-                    @if(Session::get('cart') || count(Session::get('cart')) > 1)
+                    @if(Session::get('cart'))
                         {{ count(Session::get('cart')) }}
                     @else
                         0
