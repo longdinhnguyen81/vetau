@@ -71,6 +71,17 @@ Route::namespace('Train')->group(function(){
 	]);
 });
 
+Route::post('email', [
+    'uses' => 'TrangChuController@goiEmail',
+    'as' => 'front.email'
+]);
+
+Route::namespace('Ajax')->group(function(){
+	Route::get('/ajax/cart', [
+		'uses' => 'AdminController@cart',
+		'as' => 'ajax.admin.cart'
+	]);
+});
 Route::namespace('Auth')->group(function(){
 	Route::get('login', [
 		'uses' => 'AuthController@getLogin',

@@ -25,6 +25,7 @@
                   <th>SDT</th>
                   <th>Email</th>
                   <th>Số vé</th>
+                  <th>Thanh toán</th>
                   <th>Ngày</th>
                   <th>Giờ</th>
                   <th>Chiều đi</th>
@@ -39,15 +40,18 @@
                   <td>{{$cart->fullname}}</td>
                   <td>{{$cart->phone}}</td>
                   <td>{{$cart->email}}</td>
-                  <td>{{count($cart->cost)}}</td>
+                  <td>{{$cart->people}}</td>
+                  <td>{{$cart->type}}</td>
                   <td>{{ $cart->date }}</td>
                   <td>
-                    @foreach($cart->cost as $train)
-                      {{ $train->time }}
-                    @endforeach
+                      {{ $cart->time }}
+                  </td>
+                  <td>@foreach($cart->train as $train)
+                      {{ $train->train_from }}
+                      @endforeach
                   </td>
                   @if($cart->active == 0)
-                  <td><a class="btn btn-primary">Gửi</a></td>
+                  <td id="active-{{ $cart->id }}"><a onclick="getActive({{$cart->id}})" class="btn btn-primary">Gửi vé</a></td>
                   @else
                   <td>Đã thanh toán</td>
                   @endif
@@ -64,4 +68,24 @@
 </div>
 </div>
 </div>
+<script type="text/javascript">
+    function getActive(id){
+        $.ajax({
+          url: "{{ route('ajax.admin.cart') }}",
+          type: 'GET',
+          cache: false,
+          data: {
+                id: id,
+            },
+          success: function(data){
+            console.log('success')
+            $('#active-'+id).html(data);
+          }, 
+          error: function() {
+           alert("Có lỗi");
+         }
+       }); 
+        return false;
+      }
+</script>
 @stop

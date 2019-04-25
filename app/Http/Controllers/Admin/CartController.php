@@ -10,7 +10,7 @@ use Mail;
 class CartController extends Controller
 {
     public function index(){
-    	$carts = Cart::with('cost')->get();
+    	$carts = Cart::with('train')->get();
     	return view('admin.cart.index', compact('carts'));
     }
     public function delete($id){

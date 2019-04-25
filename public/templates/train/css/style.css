@@ -7376,6 +7376,9 @@ a.social_bt.google:before {
 .color-black{
 	color: black;
 }
+.color-white{
+  color: white !important;
+}
 .primary-color{
 	color: #32a067;
 }

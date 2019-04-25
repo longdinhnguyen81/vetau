@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="utf-8">
@@ -61,13 +61,19 @@
             </div>
             <!-- /Page Preload -->
             <div id="logo">
-                <a href="index.html">
+                <a href="/">
                     <img src="/templates/train/img/logo.png" width="150" height="36" data-retina="true" alt="" class="logo_normal">
                     <img src="/templates/train/img/logo_sticky.png" width="150" height="36" data-retina="true" alt="" class="logo_sticky">
                 </a>
             </div>
             <ul id="top_menu">
-                <li><a href="" class="cart-menu-btn" title="Cart"><strong>4</strong></a></li>
+                <li><a href="{{ route('train.cart.cart') }}" class="cart-menu-btn" title="Cart"><strong>
+                    @if(Session::get('cart') || count(Session::get('cart')) > 1)
+                        {{ count(Session::get('cart')) }}
+                    @else
+                        0
+                    @endif
+                </strong></a></li>
             </ul>
             <!-- /top_menu -->
             <a href="#menu" class="btn_mobile">
@@ -82,7 +88,7 @@
                     <li><span><a href="/">Trang chủ</a></span>
                     <li><span><a href="{{ route('train.index.about') }}">Giới thiệu</a></span>
                     <li><span><a href="{{ route('train.index.banggia') }}">Giá vé</a></span>
-                    <li><span><a href="#">Tin tức</a></span>
+                    <li><span><a href="{{ route('train.post.index') }}">Tin tức</a></span>
                     <li><span><a href="{{ route('train.index.contact') }}">Liên hệ</a></span>
                 </ul>
             </nav>

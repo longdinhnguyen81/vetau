@@ -12,4 +12,8 @@ class Train extends Model
     public function cost(){
     	return $this->hasMany('App\Cost');
     }
+
+    public function cart(){
+    	return $this->belongsToMany('App\Cart');
+    }
 }

@@ -4,8 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Checkout extends Model
+class CartTrain extends Model
 {
+    protected $table = 'cart_train';
     public $timestamps = false;
     public $fillable = ['train_id', 'cart_id'];
 
