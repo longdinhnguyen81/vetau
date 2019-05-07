@@ -54,7 +54,7 @@
 <script type="text/javascript">
     function getActive(id){
         $.ajax({
-          url: "",
+          url: "{{ route('ajax.admin.post') }}",
           type: 'GET',
           cache: false,
           data: {

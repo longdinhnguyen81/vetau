@@ -187,7 +187,7 @@
 }
 
 .marker_info,body {
-  font-family: Poppins,Helvetica,sans-serif;
+  font-family: 'Open Sans',sans-serif;
 }
 
 .main-menu ul ul ul {
@@ -2598,7 +2598,7 @@ video {
 
 .hero_single.version_2 .wrapper {
   background-color: #000;
-  background-color: rgba(0,0,0,.45);
+  background-color: rgba(0,0,0,.3);
 }
 
 .hero_single.version_2 .wrapper h3 {
@@ -2771,17 +2771,16 @@ video {
   font-size: 18px;
   font-size: 1.125rem;
   position: absolute;
-  background-color: #fff;
   line-height: 50px;
   top: 0;
   right: 1px;
-  padding-right: 15px;
+  padding: 0 15px;
   display: block;
   width: 20px;
   box-sizing: content-box;
   height: 50px;
   z-index: 9;
-  color: #999;
+  color: #000;
 }
 
 @media (max-width:991px) {
@@ -3088,7 +3087,7 @@ video {
   -o-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-transform: translateZ(0) scale(.85,.85);
-  transition: all .3s ease-in-out 0s;
+  transition: all .3s ease-in-out 0;
   overflow: hidden;
 }
 
@@ -3501,7 +3500,7 @@ a.box_feat h3 {
   -ms-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-transform: translateZ(0) scale(.85,.85);
-  transition: all .3s ease-in-out 0s;
+  transition: all .3s ease-in-out 0;
   overflow: hidden;
 }
 
@@ -5431,7 +5430,7 @@ span.infobox_rate {
 }
 
 .bs-wizard>.bs-wizard-step:first-child.active>.progress>.progress-bar {
-  width: 0%;
+  width: 0;
 }
 
 .bs-wizard>.bs-wizard-step:last-child.active>.progress>.progress-bar {
@@ -5572,25 +5571,28 @@ ul#cat_nav li a:after,ul.list_3 li:before {
     white-space: nowrap;
   }
 
-  .table.cart-list td:nth-of-type(1):before,.table.cart-list td:nth-of-type(2):before,.table.cart-list td:nth-of-type(3):before,.table.cart-list td:nth-of-type(4):before {
+  .table.cart-list td:nth-of-type(1):before,.table.cart-list td:nth-of-type(2):before,.table.cart-list td:nth-of-type(3):before,.table.cart-list td:nth-of-type(4):before,.table.cart-list td:nth-of-type(5):before {
     font-weight: 600;
     color: #111;
   }
 
   .table.cart-list td:nth-of-type(1):before {
-    content: "Item";
+    content: "Sản phâm";
   }
 
   .table.cart-list td:nth-of-type(2):before {
-    content: "Discount";
+    content: "Thời gian";
   }
 
   .table.cart-list td:nth-of-type(3):before {
-    content: "Total";
+    content: "Số vé";
   }
 
   .table.cart-list td:nth-of-type(4):before {
-    content: "Actions";
+    content: "Thành tiền";
+  }
+  .table.cart-list td:nth-of-type(5):before {
+    content: "Xóa";
   }
 
   td.options {
@@ -6789,7 +6791,7 @@ ul.bullets li:before {
 }
 
 .animated .block-reveal {
-  height: auto;
+  height: 100%;
   overflow: hidden;
   position: relative;
   width: 100%;
@@ -7370,44 +7372,75 @@ a.social_bt.google:before {
     display: none;
   }
 }
-.width-30{
-	width: :20px;
+
+.width-30 {
+  width: :20px;
 }
-.color-black{
-	color: black;
+
+.color-black {
+  color: #000;
 }
-.color-white{
-  color: white !important;
+
+.color-white {
+  color: #fff!important;
 }
-.primary-color{
-	color: #32a067;
+
+.primary-color {
+  color: #32a067;
 }
-.btn-custom{
+
+.btn-custom {
   background: #32a067;
-  color: white;
+  color: #fff;
 }
-.select-option{
+
+.select-option {
   width: 100%;
   border: 1px solid #32a067;
   padding: 10px;
 }
-.style-info-trip{
+
+.style-info-trip {
   padding: 15px;
   text-align: center;
-  background: #6ed476;
-  border: 1px solid #333;
+  color: #32a067;
+  font-weight: 700;
+  border: 1px solid #32a067;
 }
-.active-trip{
-  background: red;
+
+.active-trip {
+  background: #32a067;
   color: #fff;
 }
-.submit-cart{
+
+.submit-cart {
   width: 100%;
   cursor: pointer;
   border: none;
 }
-.primary-background{
+
+.primary-background {
   color: #fff;
   background: #32a067;
-  padding: 5px
+  padding: 5px;
+}
+
+.secondary-background {
+  color: #000;
+  background: #32a067;
+}
+.primary-border{
+	border: 1px solid #32a067;
+	color: black;
+	border-radius: 10px;
+}
+.btn-pri{
+	color: white;
+	background: #32a067;
+	border-color: #32a067;
+}
+@media(max-width: 991px){
+	.display-primary{
+		display: none;
+	}
 }

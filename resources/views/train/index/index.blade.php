@@ -11,8 +11,8 @@
                                 <div class="col-lg-4">
                                     <div class="form-group">
                                         <select class="form-group" name="from">
-                                            <option>Đảo Lý Sơn - Cảng Sa Kỳ</option>
-                                            <option>Cảng Sa Kỳ - Đảo Lý Sơn</option>
+                                            <option value="Cảng Sa Kỳ - Đảo Lý Sơn">Cảng Sa Kỳ - Đảo Lý Sơn</option>
+                                            <option value="Đảo Lý Sơn - Cảng Sa Kỳ">Đảo Lý Sơn - Cảng Sa Kỳ</option>
                                         </select>
                                         <i class="icon_pin_alt"></i>
                                     </div>
@@ -30,7 +30,7 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-2">
-                                    <input type="submit" class="btn_search" value="Search">
+                                    <input type="submit" class="btn_search" value="Tìm kiếm">
                                 </div>
                             </div>
                             <!-- /row -->
@@ -40,75 +40,46 @@
             </section>
             <!-- /hero_single -->
 
-            <div class="container-fluid margin_80_0">
-               
-            </div>
-            <!-- /container -->
+            <div class="container-fluid margin_80_55">
+    			<div class="main_title_2">
+    				<span><em></em></span>
+    				<h2>Quy trình đặt vé tàu đơn giản</h2>
+    				<p>Quy trình đặt vé tàu online đơn giản, chỉ trong vòng 3 phút</p>
+    			</div>
+    			<div class="row">
+    				<div class="col-lg-3 col-md-6">
+    					<a class="box_feat">
+    						<i class="pe-7s-medal"></i>
+    						<h3>Bước 1: Tìm kiếm và lựa chọn vé tàu</h3>
+    						<p>Tìm kiếm vé tàu theo ngày và giờ mình mong muốn để ra hoặc vào đảo Lý Sơn</p>
+    					</a>
+    				</div>
+    				<div class="col-lg-3 col-md-6">
+    					<a class="box_feat">
+    						<i class="pe-7s-help2"></i>
+    						<h3>Bước 2: Điền thông tin xác nhận đặt vé</h3>
+    						<p>Điền rõ các thông tin của bạn, thông tin về họ tên, địa chỉ email và số điện thoại để chúng tôi có thể gửi vé tàu</p>
+    					</a>
+    				</div>
+    				<div class="col-lg-3 col-md-6">
+    					<a class="box_feat">
+    						<i class="pe-7s-credit"></i>
+    						<h3>Bước 3: Chọn hình thức thanh toán online</h3>
+    						<p>Chúng tôi hỗ trợ thanh toán trực tuyến qua ví Momo, Ebank. Lựa chọn hình thức thanh toán phù hợp với bạn</p>
+    					</a>
+    				</div>
+    				<div class="col-lg-3 col-md-6">
+    					<a class="box_feat">
+    						<i class="pe-7s-chat"></i>
+    						<h3>Bước 4: Nhận vé qua email và tin nhắn</h3>
+    						<p>Sau khi thanh toán thành công, các bạn sẽ nhận được vé điện tử qua email và tin nhắn điện thoại.</p>
+    					</a>
+    				</div>
+    			</div>
+    			<!--/row-->
+    		</div>
+	    	<!-- /container -->
 
-            <div class="container-fluid margin_30_95 pl-lg-5 pr-lg-5">
-                <section class="add_bottom_45">
-                    <div class="main_title_3">
-                        <span><em></em></span>
-                        <h2>Quy trình đặt vé tàu super Biển Đông online</h2>
-                        <p>Quy trình được đảm bảo đơn giản hóa cho việc thanh toán cho quý khách.</p>
-                    </div>
-                    <div class="row">
-                        <div class="col-xl-3 col-lg-6 col-md-6">
-                            <a class="grid_item">
-                                <figure>
-                                    <div class="score"></div>
-                                    <img src="/templates/train/img/hotel.png" class="img-fluid" alt="Đặt vé tàu đi Lý Sơn">
-                                    <div class="info">
-                                        <h3>B1: Tìm và chọn chuyến tàu</h3>
-                                    </div>
-                                </figure>
-                            </a>
-                        </div>
-                        <!-- /grid_item -->
-                        <div class="col-xl-3 col-lg-6 col-md-6">
-                            <a class="grid_item">
-                                <figure>
-                                    <div class="score"></div>
-                                    <img src="/templates/train/img/info.png" class="img-fluid" alt="Đặt vé tàu đi Lý Sơn">
-                                    <div class="info">
-                                        <h3>B2: Điền thông tin cá nhân vào mẫu</h3>
-                                    </div>
-                                </figure>
-                            </a>
-                        </div>
-                        <!-- /grid_item -->
-                        <div class="col-xl-3 col-lg-6 col-md-6">
-                            <a class="grid_item">
-                                <figure>
-                                    <div class="score"></div>
-                                    <img src="/templates/train/img/checkout.png" class="img-fluid" alt="Đặt vé tàu đi Lý Sơn">
-                                    <div class="info">
-                                        <h3>B3: Chọn hình thức thanh toán</h3>
-                                    </div>
-                                </figure>
-                            </a>
-                        </div>
-                        <!-- /grid_item -->
-                        <div class="col-xl-3 col-lg-6 col-md-6">
-                            <a class="grid_item">
-                                <figure>
-                                    <div class="score"></div>
-                                    <img src="/templates/train/img/success.png" class="img-fluid" alt="Đặt vé tàu đi Lý Sơn">
-                                    <div class="info">
-                                        <h3>B4: Thanh toán theo hướng dẫn và nhận email hướng dẫn lấy vé tàu.</h3>
-                                    </div>
-                                </figure>
-                            </a>
-                        </div>
-                        <!-- /grid_item -->
-                    </div>
-                    <!-- /row -->
-                    <a href="hotels-grid-isotope.html"><strong>View all (157) <i class="arrow_carrot-right"></i></strong></a>
-                </section>
-                <!-- /section -->
-
-            </div>
-            <!-- /container -->
             <div class="bg_color_1">
             <div class="container margin_80_55">
                 <div class="main_title_2">
@@ -120,7 +91,13 @@
                     <div class="col-lg-6 wow" data-wow-offset="150">
                         <figure class="block-reveal">
                             <div class="block-horizzontal"></div>
-                            <img src="/templates/train/img/super-bien-dong.jpg" class="img-fluid" alt="">
+                            <!-- wrapper -->
+                            <div class="vplayer" data-v="lx1d84zLuHg"> 
+                             
+                             <!-- play btn -->
+                             <div class="plybtn"></div> 
+                             
+                            </div>
                         </figure>
                     </div>
                     <div class="col-lg-5">
@@ -137,65 +114,24 @@
                 <div class="container margin_80_55">
                     <div class="main_title_2">
                         <span><em></em></span>
-                        <h3>News and Events</h3>
-                        <p>Cum doctus civibus efficiantur in imperdiet deterruisset.</p>
+                        <h3>Tin tức du lịch đảo Lý Sơn</h3>
+                        <p>Trang thông tin du lịch đảo Lý Sơn.</p>
                     </div>
                     <div class="row">
+                    @foreach($posts as $post)
                         <div class="col-lg-6">
-                            <a class="box_news" href="#0">
-                                <figure><img src="/templates/train/img/news_home_1.jpg" alt="">
-                                    <figcaption><strong>28</strong>Dec</figcaption>
+                            <a class="box_news" href="">
+                                <figure><img src="/upload/{{ $post->picture }}" alt="{{ $post->title }}">
+                                    <figcaption><strong>{{ date_format($post->created_at, 'd') }}</strong>{{ date_format($post->created_at, 'M') }}</figcaption>
                                 </figure>
                                 <ul>
-                                    <li>Mark Twain</li>
-                                    <li>20.11.2017</li>
+                                    <li>{{ date_format($post->created_at,'d/m/Y') }}</li>
                                 </ul>
-                                <h4>Pri oportere scribentur eu</h4>
-                                <p>Cu eum alia elit, usu in eius appareat, deleniti sapientem honestatis eos ex. In ius esse ullum vidisse....</p>
+                                <h4>{{ $post->title }}</h4>
+                                <p>{{ $post->description }}</p>
                             </a>
                         </div>
-                        <!-- /box_news -->
-                        <div class="col-lg-6">
-                            <a class="box_news" href="#0">
-                                <figure><img src="/templates/train/img/news_home_2.jpg" alt="">
-                                    <figcaption><strong>28</strong>Dec</figcaption>
-                                </figure>
-                                <ul>
-                                    <li>Jhon Doe</li>
-                                    <li>20.11.2017</li>
-                                </ul>
-                                <h4>Duo eius postea suscipit ad</h4>
-                                <p>Cu eum alia elit, usu in eius appareat, deleniti sapientem honestatis eos ex. In ius esse ullum vidisse....</p>
-                            </a>
-                        </div>
-                        <!-- /box_news -->
-                        <div class="col-lg-6">
-                            <a class="box_news" href="#0">
-                                <figure><img src="/templates/train/img/news_home_3.jpg" alt="">
-                                    <figcaption><strong>28</strong>Dec</figcaption>
-                                </figure>
-                                <ul>
-                                    <li>Luca Robinson</li>
-                                    <li>20.11.2017</li>
-                                </ul>
-                                <h4>Elitr mandamus cu has</h4>
-                                <p>Cu eum alia elit, usu in eius appareat, deleniti sapientem honestatis eos ex. In ius esse ullum vidisse....</p>
-                            </a>
-                        </div>
-                        <!-- /box_news -->
-                        <div class="col-lg-6">
-                            <a class="box_news" href="#0">
-                                <figure><img src="/templates/train/img/news_home_4.jpg" alt="">
-                                    <figcaption><strong>28</strong>Dec</figcaption>
-                                </figure>
-                                <ul>
-                                    <li>Paula Rodrigez</li>
-                                    <li>20.11.2017</li>
-                                </ul>
-                                <h4>Id est adhuc ignota delenit</h4>
-                                <p>Cu eum alia elit, usu in eius appareat, deleniti sapientem honestatis eos ex. In ius esse ullum vidisse....</p>
-                            </a>
-                        </div>
+                    @endforeach
                         <!-- /box_news -->
                     </div>
                     <!-- /row -->

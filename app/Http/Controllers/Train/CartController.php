@@ -14,6 +14,7 @@ class CartController extends Controller
 {
     public function cart(Request $request){
  
+        $cart = [];
     	$time = $request->time;
     	$people = $request->people;
     	$from = $request->from;
@@ -22,7 +23,7 @@ class CartController extends Controller
     	$train = Train::where('train_from', 'like', '%'. $from. '%')->first();
 
     	if(!$train){
-    		return redicrect()->route('errors.404');
+    		return redirect()->route('train.index.index');
     	}
 		if($time && $people && $from && $date){
 			$cart = array([
@@ -51,6 +52,13 @@ class CartController extends Controller
     	return view('train.cart.checkout');
     }
     public function thanhtoan(Request $request){
+        $request->validate([
+            'name' => 'required',
+            'cmnd' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
+        ]);
+
         $carts = Session::get('cart');
         $date = date_create($carts[0]['date']);
         $email = $request->email;
@@ -72,25 +80,25 @@ class CartController extends Controller
             'train_id' => $train->id,
         ]);
         $carttrain->save();
-
         if($train){
             Mail::send('mailfb',array(
                 'name' => $request->name,
                 'type' => $request->type,
                 'time' => $cart->time,
-                'date' => $date,
+                'date' => $cart->date,
                 'train_from' => $train->train_from,
-                'people' => $cart->people,
+                'people' => $carts[0]['people'],
                 'cost' => $train->recost,
                 'id' => $cart->id,
             ),function($message) use ($email){
-                $message->to($email,'Visitor')->subject('Đặt vé tàu đi Lý Sơn');
+                $message->to($email,'Đại lý vé tàu')->subject('Đặt vé tàu đi Lý Sơn');
             });
+
             Mail::send('home',array(
                 'name' => $request->name,
                 'type' => $request->type,
                 'time' => $cart->time,
-                'date' => $date,
+                'date' => $cart->date,
                 'phone' => $request->phone,
                 'cmnd' => $request->cmnd,
                 'train_from' => $train->train_from,
@@ -98,13 +106,13 @@ class CartController extends Controller
                 'cost' => $train->recost,
                 'id' => $cart->id,
             ),function($message){
-                $message->to('dailyvetaulyson@gmail.com','Visitor')->subject('Đặt vé tàu đi Lý Sơn');
+                $message->to('dailyvetaulyson@gmail.com','Đại lý vé tàu')->subject('Đặt vé tàu đi Lý Sơn');
             });
         }
             
         Session::forget('cart');
         $request->session()->put('cart', []);
 
-        return redirect()->route('train.index.index');
+        return redirect()->route('train.index.success');
     }
 }

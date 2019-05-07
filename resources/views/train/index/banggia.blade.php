@@ -18,33 +18,47 @@
 		<div class="container margin_60_35">
 			<div class="row">
 				<aside class="col-lg-3">
-					<div>
-						<h4 class="primary-color">Tìm kiếm chuyến tàu:</h4>
-						<div class="form-group">
-							<label>Chuyến đi:</label>
-							<select class="form-group select-option">
-								<option>Đảo Lý Sơn - Cảng Sa Kỳ</option>
-								<option>Cảng Sa Kỳ - Đảo Lý Sơn</option>
-							</select>
-						</div>
-						<div class="form-group">
-							<label>Ngày</label>
-                            <input class="form-control" type="text" name="dates" value="" placeholder="When..">
-						</div>
-						<div class="form-group">
-							<label>Số lượng</label>
-							<input class="form-control" type="number" />
-						</div>
-						<div class="form-group text-center">
-							<button class="btn btn-custom">Tìm</button>
-						</div>
-						<!--/collapse -->
-					</div>
-					<!--/filters col-->
+				    <div>
+						<form method="get" action="{{ route('train.index.vetau') }}">
+		                    <div class="row no-gutters custom-search-input-2">
+		                        <div class="col-12 mb-3">
+		                            <div class="form-group">
+		                            	<h5 class="secondary-background text-center p-3">Tìm kiếm chuyến tàu</h5>
+		                            </div>
+		                        </div>
+		                        <div class="col-12 mb-3">
+		                            <div class="form-group">
+		                                <select class="form-group" name="from">
+                                    <option value="Cảng Sa Kỳ - Đảo Lý Sơn">Cảng Sa Kỳ - Đảo Lý Sơn</option>
+                                    <option value="Đảo Lý Sơn - Cảng Sa Kỳ">Đảo Lý Sơn - Cảng Sa Kỳ</option>
+		                                </select>
+		                                <i class="icon_pin_alt primary-background"></i>
+		                            </div>
+		                        </div>
+		                        <div class="col-12 pb-3">
+		                            <div class="form-group">
+		                                <input class="form-control" type="text" name="dates" value="" placeholder="When..">
+		                                <i class="icon_calendar primary-background"></i>
+		                            </div>
+		                        </div>
+		                        <div class="col-12 pb-3">
+		                            <div class="form-group">
+		                                <input class="form-control" type="number" name="people" placeholder="Số lượng">
+		                                <i class="icon-database primary-background"></i>
+		                            </div>
+		                        </div>
+		                        <div class="col-12">
+		                            <input type="submit" class="btn_search" value="Tìm kiếm">
+		                        </div>
+		                    </div>
+		                    <!-- /row -->
+		                </form>
+                    </div>
+				    <!--/filters col-->
 				</aside>
 				<!-- /aside -->
 
-				<div class="col-lg-9" style="font-size: 16px">
+				<div class="col-lg-9" style="font-size: 16px; padding: 0 60px">
 					<div class="isotope-wrapper">
 						<div class="row text-center">
 							<h2 class="mb-5 d-block primary-color" style="width:100%">Bảng giá vé tàu Super Biển Đông</h2>

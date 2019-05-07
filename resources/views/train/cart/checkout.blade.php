@@ -5,8 +5,8 @@
 			<div class="wrapper">
 				<div class="container">
 					<div class="bs-wizard clearfix">
-						<div class="bs-wizard-step">
-							<div class="text-center bs-wizard-stepnum">Your cart</div>
+						<div class="bs-wizard-step active">
+							<div class="text-center bs-wizard-stepnum">Giỏ hàng</div>
 							<div class="progress">
 								<div class="progress-bar"></div>
 							</div>
@@ -14,7 +14,7 @@
 						</div>
 
 						<div class="bs-wizard-step active">
-							<div class="text-center bs-wizard-stepnum">Payment</div>
+							<div class="text-center bs-wizard-stepnum">Thanh toán</div>
 							<div class="progress">
 								<div class="progress-bar"></div>
 							</div>
@@ -22,7 +22,7 @@
 						</div>
 
 						<div class="bs-wizard-step disabled">
-							<div class="text-center bs-wizard-stepnum">Finish!</div>
+							<div class="text-center bs-wizard-stepnum">Hoàn thành!</div>
 							<div class="progress">
 								<div class="progress-bar"></div>
 							</div>
@@ -47,18 +47,27 @@
 								</p>
 							</div>
 							<form class="step" method="post" action="{{ route('train.cart.thanhtoan') }}">
+					            @if ($errors->any())
+								    <div class="alert alert-danger">
+								        <ul>
+								            @foreach ($errors->all() as $error)
+								                <li>{{ $error }}</li>
+								            @endforeach
+								        </ul>
+								    </div>
+								@endif
 								{{ csrf_field() }}
 								<div class="row">
 									<div class="col-sm-6">
 										<div class="form-group">
 											<label>Họ và tên:</label>
-											<input type="text" class="form-control" id="firstname_booking" name="name">
+											<input type="text" class="form-control" id="firstname_booking" name="name" value={{ old('name') }}>
 										</div>
 									</div>
 									<div class="col-sm-6">
 										<div class="form-group">
 											<label>Số cmnd:</label>
-											<input type="text" id="telephone_booking" name="cmnd" class="form-control">
+											<input type="number" id="telephone_booking" name="cmnd" class="form-control" value={{ old('cmnd') }}>
 										</div>
 									</div>
 								</div>
@@ -66,13 +75,13 @@
 									<div class="col-sm-6">
 										<div class="form-group">
 											<label>Địa chỉ email:</label>
-											<input type="email" id="email_booking" name="email" class="form-control">
+											<input type="email" id="email_booking" name="email" class="form-control" value={{ old('email') }}>
 										</div>
 									</div>
 									<div class="col-sm-6">
 										<div class="form-group">
 											<label>Xác nhận địa chỉ email:</label>
-											<input type="email" id="email_booking_2" name="email_confimation" class="form-control">
+											<input type="email" id="email_booking_2" name="email_confimation" class="form-control" value={{ old('email_confimation') }}>
 										</div>
 									</div>
 								</div>
@@ -80,7 +89,7 @@
 									<div class="col-sm-6">
 										<div class="form-group">
 											<label>Số điện thoại:</label>
-											<input type="text" id="telephone_booking" name="phone" class="form-control">
+											<input type="text" id="telephone_booking" name="phone" class="form-control" value={{ old('phone') }}>
 										</div>
 									</div>
 									<div class="col-sm-6">
@@ -119,10 +128,18 @@
 
 								<div id="collapseOne_payment" class="collapse show" role="tabpanel" data-parent="#payment">
 									<div class="card-body">
-										<span class="d-block">Quý khách vui lòng chuyển khoản trực tiếp vào số tài khoản bên dưới</span>
-										<span class="d-block"><strong class="primary-color">Chủ TK:</strong> Nguyễn Minh Tài</span>
+										<span class="d-block">Quý khách vui lòng chuyển khoản trực tiếp vào 1 trong những số tài khoản bên dưới</span>
+										<span class="d-block"><strong class="primary-color">Chủ TK:</strong>Nguyễn Minh Tài</span>
 										<span class="d-block"><strong class="primary-color">STK:</strong> 0041000340980</span>
-										<span class="d-block"><strong class="primary-color">Chi nhánh:</strong> VCB Liên Chiểu - Đà Nẵng</span>
+										<span class="d-block"><strong class="primary-color">Chi nhánh:</strong>Ngân hàng VCB Chi nhánh Đà Nẵng</span>
+										<hr>
+										<span class="d-block"><strong class="primary-color">Chủ TK:</strong>Trần Thị Kiều Oanh</span>
+										<span class="d-block"><strong class="primary-color">STK:</strong> 0041001063937</span>
+										<span class="d-block"><strong class="primary-color">Chi nhánh:</strong>Ngân hàng VCB Chi nhánh Đà Nẵng</span>
+										<hr>
+										<span class="d-block"><strong class="primary-color">Chủ TK:</strong>CTY TNHH DU LỊCH VÀ THƯƠNG MẠI HOÀNG PHÚC</span>
+										<span class="d-block"><strong class="primary-color">STK:</strong> 3011101676768</span>
+										<span class="d-block"><strong class="primary-color">Chi nhánh:</strong>Ngân hàng MB Quân đội chi nhánh Đà Nẵng</span>
 									</div>
 								</div>
 							</div>
@@ -137,8 +154,11 @@
 								</div>
 								<div id="collapseTwo_payment" class="collapse" role="tabpanel" data-parent="#payment">
 									<div class="card-body">
-										<span class="d-block"><strong class="primary-color">Chủ TK:</strong> Nguyễn Minh Tài</span>
+										<span class="d-block"><strong class="primary-color">Chủ TK:</strong>Nguyễn Minh Tài</span>
 										<span class="d-block"><strong class="primary-color">SDT:</strong> 0978175506</span>
+										<hr>
+										<span class="d-block"><strong class="primary-color">Chủ TK:</strong>Trần Thị Kiều Oanh</span>
+										<span class="d-block"><strong class="primary-color">SDT:</strong> 0905011288</span>
 									</div>
 								</div>
 							</div>
@@ -156,7 +176,7 @@
 										<p><strong class="primary-color">Chi nhánh Đà Nẵng:</strong> Tầng 2 - 121 Cù Chính Lan - Quận Thanh Khê - Đà Nẵng</p>
 										<p><strong class="primary-color">Chi nhánh Đà Nẵng:</strong> 476A Trưng Nữ Vương - Quận Hải Châu - TP Đà Nẵng</p>
 										<p><strong class="primary-color">Chi nhánh Quảng Ngãi:</strong> 450 Nguyễn Văn Linh - Phường Trương Quang Trọng - TP Quảng Ngãi</p>
-										<p><strong class="primary-color">SDT liên hệ:</strong> 0978175506</p>
+										<p><strong class="primary-color">SDT liên hệ:</strong>0905011288,	 0978175506</p>
 									</div>
 								</div>
 							</div>

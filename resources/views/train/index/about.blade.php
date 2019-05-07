@@ -76,7 +76,7 @@
                     <div class="col-lg-6 wow" data-wow-offset="150">
                         <figure class="block-reveal">
                             <div class="block-horizzontal"></div>
-                            <img src="/templates/train/img/super-bien-dong.jpg" class="img-fluid" alt="">
+                            <img src="/templates/train/img/super-bien-dong.jpg" class="img-fluid" alt="Mua vé tàu đi Lý Sơn">
                         </figure>
                     </div>
                     <div class="col-lg-5">
@@ -91,7 +91,7 @@
 		</div>
 		<!--/bg_color_1-->
 
-		<div class="container margin_80_55">
+		{{-- <div class="container margin_80_55">
 			<div class="main_title_2">
 				<span><em></em></span>
 				<h2>Our founders</h2>
@@ -135,7 +135,7 @@
 				</div>
 			</div>
 			<!-- /carousel -->
-		</div>
+		</div> --}}
 		<!--/container-->
 	</main>
 	<!--/main-->

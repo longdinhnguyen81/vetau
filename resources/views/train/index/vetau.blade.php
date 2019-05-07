@@ -1,10 +1,13 @@
 @extends('templates.train.master')
 @section('content')
+@php
+	date_default_timezone_set('asia/ho_chi_minh');
+@endphp
 	<main>
 	<section class="hero_in general">
 		<div class="wrapper">
 		<div class="container">
-			<h1 class="fadeInUp"><span></span>Tìm kiếm vé tàu</h1>
+			<h1 class="fadeInUp"><span></span>Tìm kiếm vé tàu đi Lý Sơn</h1>
 		</div>
 		</div>
 	</section>
@@ -12,80 +15,115 @@
 
 	<div class="container margin_60_35">
 		<div class="row">
-			<aside class="col-lg-3 mt-5">
-				<form method="get" action={{ route('train.index.vetau') }}>
-					<h5 class="primary-color">Tìm kiếm chuyến tàu:</h5>
-					<div class="form-group">
-						<label>Chuyến đi:</label>
-						<select class="form-group select-option" name="from">
-							<option>Đảo Lý Sơn - Cảng Sa Kỳ</option>
-							<option>Cảng Sa Kỳ - Đảo Lý Sơn</option>
-						</select>
-					</div>
-					<div class="form-group">
-						<label>Ngày</label>
-	                    <input class="form-control" type="text" name="dates" value="" placeholder="When..">
-					</div>
-					<div class="form-group">
-						<label>Số lượng</label>
-						<input class="form-control" type="number" name="people" />
-					</div>
-					<div class="form-group text-center">
-						<button class="btn btn-custom">Tìm</button>
-					</div>
-					<!--/collapse -->
-				</form>
+			<aside class="col-lg-3 mt-2">
+				<form method="get" action="{{ route('train.index.vetau') }}">
+                    <div class="row no-gutters custom-search-input-2">
+                        <div class="col-12 mb-3">
+                            <div class="form-group">
+                            	<h5 class="secondary-background text-center p-3">Tìm kiếm chuyến tàu</h5>
+                            </div>
+                        </div>
+                        <div class="col-12 mb-3">
+                            <div class="form-group">
+                                <select class="form-group" name="from">
+                                    <option value="Cảng Sa Kỳ - Đảo Lý Sơn">Cảng Sa Kỳ - Đảo Lý Sơn</option>
+                                    <option value="Đảo Lý Sơn - Cảng Sa Kỳ">Đảo Lý Sơn - Cảng Sa Kỳ</option>
+                                </select>
+                                <i class="icon_pin_alt primary-background"></i>
+                            </div>
+                        </div>
+                        <div class="col-12 pb-3">
+                            <div class="form-group">
+                                <input class="form-control" type="text" name="dates" value="{{ date_format($dates, 'm/d/Y') }}" placeholder="When..">
+                                <i class="icon_calendar primary-background"></i>
+                            </div>
+                        </div>
+                        <div class="col-12 pb-3">
+                            <div class="form-group">
+                                <input class="form-control" type="number" name="people" placeholder="Số lượng" value="{{ $people }}">
+                                <i class="icon-database primary-background"></i>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <input type="submit" class="btn_search" value="Tìm kiếm">
+                        </div>
+                    </div>
+                    <!-- /row -->
+                </form>
+                <div>
+                	<img src="/templates/train/img/promotion.png" alt="Đặt vé tàu giá rẻ đi Lý Sơn" class="display-primary" />
+                </div>
 				<!--/filters col-->
 			</aside>
 			<!-- /aside -->
-			<div class="pricing-container cd-has-margins col-lg-9">
-				<div class="container">
+			<div class="pricing-container cd-has-margins col-lg-9 container" style="padding: 0 25px">
+				<div class="container color-black">
 					|<i class="icon-home"></i>|
 					<span>Kết quả tìm kiếm</span>
-					<div class="row">
-						<div class="col-lg-3 col-6 style-info-trip active-trip">Chọn chuyến đi</div>
-						<div class="col-lg-3 col-6 style-info-trip">Điền thông tin</div>
-						<div class="col-lg-3 col-6 style-info-trip">Thanh toán</div>
-						<div class="col-lg-3 col-6 style-info-trip">Nhận vé</div>
+					<div class="row text-center">
+						<h4 class="mt-4 primary-color font-weight-bold">Tàu Super Biển Đông ngày {{ date_format($dates, 'd-m-Y') }} chuyến {{ $from }}</h4>
 					</div>
 				</div>
 				<!--/pricing-switcher -->
 				<ul class="pricing-list bounce-invert row">
+				@php
+					$day = date_format($dates, 'd');
+					$i =0;
+					$k = rand(100000,999999);
+				@endphp
 				@if($trains)
 					@foreach($trains->cost as $cost)
-					<li class="popular col-lg-4">
-						<ul class="pricing-wrapper">
-							<li data-type="monthly" class="is-visible">
-								<header class="pricing-header">
-									<h2>{{ $trains->title }}</h2>
+					@php
+						$i++;
+					@endphp
+					@if(substr($cost->time, 0,2) > date('H') || $day != date('d'))
+					<li class="col-lg-4 col-md-6 col-sm-12 mb-4">
+						<!-- Card -->
+						<div class="card card-image primary-border">
 
-								</header>
-								<!-- /pricing-header -->
-								<form method="post" action="{{ route('train.cart.cart') }}">
-									{{ csrf_field() }}
-								<div class="pricing-body">
-									<ul class="pricing-features">
-										<li><em>Giá vé:</em> {{ number_format($trains->recost, 0, ',', '.') }} VND</li>
-										<li><em>Giờ đi:</em> {{ $cost->time }}</li>	
-										<li><em>Thời gian:</em> 35p</li>
-										<li>
+						<!--Pricing card-->
+							<div class="text-white text-center pricing-card d-flex align-items-center rgba-stylish-strong">
+
+							<!--Content-->
+								<div class="card-body">
+									<div class="price pt-0">
+										<h6><strong>Mã chuyến tàu:</strong> L{{ $k+$i }}</h6>
+									</div>
+										<!--Price-->
+									<form method="post" action="{{ route('train.cart.cart') }}">
+										{{ csrf_field() }}
+										<ul class="striped mt-3 text-left" style="color:black; font-size: 16px">
+											<li>
+												<p class="mb-2"><strong><i class="icon-book pr-3 primary-color"></i>Giá vé:</strong> {{ number_format($trains->recost, 0, ',', '.') }} VND</p>
+											</li>
+											<li>
+												<p class="mb-2"><strong><i class="icon-clock pr-3 primary-color"></i>Giờ đi:</strong> {{ $cost->time }}</p>
+											</li>
+											<li>
+												<p class="mb-2"><strong><i class="icon-back-in-time pr-3 primary-color"></i>Thời gian:</strong> 40p</p>
+											</li>
+											<li>
 												<input type="hidden" name="time" value="{{ $cost->time }}" />
 												<input type="hidden" name="from" value="{{ $trains->train_from }}" />
-												<input type="hidden" name="date" value="{{ $date }}" />
-												<input type="hidden" name="people" value="{{ $people }}" />
-												<em>Số vé:</em> {{ $people }}
-										</li>
-									</ul>
+												<input type="hidden" name="date" value="{{ date_format($dates,'d-m-Y') }}" />
+												@if($people)													
+												<p class="mb-2"><input type="hidden" name="people" value="{{ $people }}" />
+												<strong><i class="icon-list-numbered pr-3 primary-color"></i>Số vé:</strong> {{ $people }}</p>
+												@else
+												<p class="mb-2"><strong><i class="icon-list-numbered pr-3 primary-color"></i>Số vé:</strong> <input name="people" style="width: 50%" value="1" /></p>
+												@endif
+											</li>
+										</ul>
+										<button type="submit" class="btn btn-pri">Đặt vé</button>
+									</form>
 								</div>
-								<footer class="pricing-footer">
-									<input class="select-plan submit-cart" type="submit" value="Thêm vào giỏ" />
-								</footer>
-								</form>
 
-							</li>
-						</ul>
-						<!-- /pricing-wrapper -->
+							</div>
+						<!--Pricing card-->
+						</div>
 					</li>
+				
+						@endif
 					@endforeach
 				@else
 					<h3 class="primary-color">Không tìm thấy chuyến theo yêu cầu</h3>

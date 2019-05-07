@@ -26,7 +26,8 @@
                   <th>Email</th>
                   <th>Số vé</th>
                   <th>Thanh toán</th>
-                  <th>Ngày</th>
+                  <th>Ngày đặt</th>
+                  <th>Ngày đi</th>
                   <th>Giờ</th>
                   <th>Chiều đi</th>
                   <th>Tình trạng</th>
@@ -42,6 +43,7 @@
                   <td>{{$cart->email}}</td>
                   <td>{{$cart->people}}</td>
                   <td>{{$cart->type}}</td>
+                  <td>{{ $cart->created_at }}</td>
                   <td>{{ $cart->date }}</td>
                   <td>
                       {{ $cart->time }}

@@ -5,7 +5,7 @@
 		<section class="hero_in contacts">
 			<div class="wrapper">
 				<div class="container">
-					<h1 class="fadeInUp"><span></span>Contact Us</h1>
+					<h1 class="fadeInUp"><span></span>Liên hệ với chúng tôi</h1>
 				</div>
 			</div>
 		</section>
@@ -39,7 +39,7 @@
 			<div class="container margin_80_55">
 				<div class="row justify-content-between">
 					<div class="col-lg-5">
-						<img src="/templates/train/img/contact.jpg" class="img-fluid" alt="">
+						<img src="/templates/train/img/contact.jpg" class="img-fluid" alt="Mua vé tàu đi Lý Sơn">
 						<!-- /map -->
 					</div>
 					<div class="col-lg-6">

@@ -69,6 +69,14 @@ Route::namespace('Train')->group(function(){
 		'uses' => 'CartController@destroy',
 		'as' => 'train.cart.destroy'
 	]);
+	Route::get('dat-ve-thanh-cong', [
+		'uses' => 'IndexController@success',
+		'as' => 'train.index.success'
+	]);
+	Route::get('sitemap.xml', [
+		'uses' => 'IndexController@sitemap',
+		'as' => 'train.index.sitemap'
+	]);
 });
 
 Route::post('email', [
@@ -80,6 +88,10 @@ Route::namespace('Ajax')->group(function(){
 	Route::get('/ajax/cart', [
 		'uses' => 'AdminController@cart',
 		'as' => 'ajax.admin.cart'
+	]);
+	Route::get('/ajax/post', [
+		'uses' => 'AdminController@post',
+		'as' => 'ajax.admin.post'
 	]);
 });
 Route::namespace('Auth')->group(function(){

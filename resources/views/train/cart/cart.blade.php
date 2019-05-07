@@ -10,7 +10,7 @@
 							<div class="progress">
 								<div class="progress-bar"></div>
 							</div>
-							<a href="#0" class="bs-wizard-dot"></a>
+							<a class="bs-wizard-dot"></a>
 						</div>
 
 						<div class="bs-wizard-step disabled">
@@ -18,7 +18,7 @@
 							<div class="progress">
 								<div class="progress-bar"></div>
 							</div>
-							<a href="#0" class="bs-wizard-dot"></a>
+							<a class="bs-wizard-dot"></a>
 						</div>
 
 						<div class="bs-wizard-step disabled">
@@ -26,7 +26,7 @@
 							<div class="progress">
 								<div class="progress-bar"></div>
 							</div>
-							<a href="#0" class="bs-wizard-dot"></a>
+							<a class="bs-wizard-dot"></a>
 						</div>
 					</div>
 					<!-- End bs-wizard -->
@@ -77,7 +77,7 @@
 										{{ $cart['people'] }}
 									</td>
 									<td>
-										<strong>{{ $cart['cost']*$cart['people'] }}</strong>
+										<strong>{{ number_format($cart['cost']*$cart['people'],0,',','.') }} VND</strong>
 									</td>
 									<td class="options" style="width:5%; text-align:center;">
 										<a href="{{ route('train.cart.destroy') }}"><i class="icon-trash"></i></a>

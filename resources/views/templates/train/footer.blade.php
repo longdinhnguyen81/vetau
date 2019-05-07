@@ -1,8 +1,10 @@
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v3.3&appId=1797819373651791&autoLogAppEvents=1"></script>        
         <footer>
             <div class="container margin_60_35">
                 <div class="row">
                     <div class="col-lg-5 col-md-12 p-r-5">
-                        <p><img src="/templates/train/img/logo.png" width="150" height="36" data-retina="true" alt=""></p>
+                        <p><img src="/templates/train/img/logo.png" width="150" height="36" data-retina="true" alt="Mua vé tàu đi Lý Sơn"></p>
                         <p>Super Biển Đông là dịch vụ tàu mới nhất nhanh nhất từ Cảng Sa Kỳ ra đảo Lý Sơn. Với hệ thống tàu hiện đại, tiện nghi, chúng tôi luôn chọn những dịch vụ tốt nhất, rẻ nhất và nhanh nhất đến tay các bạn.</p>
                         <div class="follow_us">
                             <ul>
@@ -16,19 +18,19 @@
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 ml-lg-auto">
-                        <h5>Trang hữu ích</h5>
+                        <h5 class="primary-color">Trang hữu ích</h5>
                         <ul class="links">
-                            <li><a href="about.html">Trang chủ</a></li>
-                            <li><a href="login.html">Giới thiệu</a></li>
-                            <li><a href="register.html">Liên hệ</a></li>
-                            <li><a href="blog.html">Tin tức</a></li>
+                            <li><a href="/">Trang chủ</a></li>
+                            <li><a href="{{ route('train.index.about') }}">Giới thiệu</a></li>
+                            <li><a href="{{ route('train.index.contact') }}">Liên hệ</a></li>
+                            <li><a href="{{ route('train.post.index') }}">Tin tức</a></li>
                         </ul>
                     </div>
                     <div class="col-lg-3 col-md-6">
-                        <h5>Liên hệ với chúng tôi</h5>
+                        <h5 class="primary-color">Liên hệ với chúng tôi</h5>
                         <ul class="contacts">
-                            <li><a href="tel://61280932400"><i class="ti-mobile"></i>0978.1755506</a></li>
-                            <li><a href="mailto:info@Panagea.com"><i class="ti-email"></i>taiembkdn@gmail.com</a></li>
+                            <li><a href="tel:0978175506"><i class="ti-mobile"></i>0905.011.288</a></li>
+                            <li><a href="mailto:dailyvetaulyson@gmail.com"><i class="ti-email"></i>dailyvetaulyson@gmail.com</a></li>
                         </ul>
                         <div id="newsletter">
                             <h6>Nhận tin tức khuyến mãi</h6>
@@ -51,6 +53,18 @@
                 </div>
             </div>
         </footer>
+           <div class='quick-call-button'></div>
+            <div class='call-now-button'>
+                <div>
+                    <p class='call-text' style="background-color:#32a067;font-size:19px;border: 1px solid black"><span style="color:#000">0905.011.288</span></p>
+                    <a{{--  onclick="return getCall()" --}} href='tel:0905011288' title='Gọi tông đài' >
+                        <div class='quick-alo-ph-circle active'></div>
+                        <div class='quick-alo-ph-circle-fill active'></div>
+                        <div class='quick-alo-ph-img-circle shake'></div>
+                    </a>
+                </div>
+            </div>
+        </div>
         <!--/footer-->
     </div>
     <!-- page -->
@@ -69,26 +83,35 @@
 
     <!-- DATEPICKER  -->
     <script>
-        var date = new Date();
-        date.setDate(date.getDate());
+        var today = new Date();
+        var dd = today.getDate() + 1;
+        var mm = today.getMonth() + 1;
+        var yyyy = today.getFullYear();
+        if (dd < 10) {
+          dd = '0' + dd;
+        } 
+        if (mm < 10) {
+          mm = '0' + mm;
+        } 
+        var day = mm + '-' + dd + '-' + yyyy;
+        console.log(day)
 
         $(function() {
             $('input[name="dates"]').daterangepicker({
-                minDate: date,
+                minDate: day,
                 singleDatePicker: true,
                 locale: {
                     cancelLabel: 'Clear'
                 }
             });
             $('input[name="dates"]').on('apply.daterangepicker', function(ev, picker) {
-                $(this).val(picker.startDate.format('MM-DD-YY'));
+                $(this).val(picker.startDate.format('MM/DD/YYYY'));
             });
         });
 
     </script>
 
     <!-- INPUT QUANTITY  -->
-    <script src="/templates/train/js/input_qty.js"></script>
 
     <!-- COLOR SWITCHER  -->
     

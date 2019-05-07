@@ -4,7 +4,7 @@
 		<section class="hero_in general">
 			<div class="wrapper">
 				<div class="container">
-					<h1 class="fadeInUp"><span></span>Panagea blog</h1>
+					<h1 class="fadeInUp"><span></span>{{ $post->title }}</h1>
 				</div>
 			</div>
 		</section>
@@ -14,121 +14,27 @@
 			<div class="row">
 				<div class="col-lg-9">
 					<div class="bloglist singlepost">
-						<p><img alt="" class="img-fluid" src="/templates/train/img/blog-single.jpg"></p>
-						<h1>Your blog article title</h1>
+						<p class="text-center"><img alt="{{ $post->title }}" class="img-fluid" src="/upload/{{ $post->picture }}"></p>
+						<h1>{{ $post->title }}</h1>
 						<div class="postmeta">
 							<ul>
-								<li><a href="#"><i class="icon_folder-alt"></i> Collections</a></li>
-								<li><a href="#"><i class="icon_clock_alt"></i> 23/12/2015</a></li>
+								<li><a href="#"><i class="icon_clock_alt"></i>{{ date_format($post->created_at, 'd/m/Y') }}</a></li>
 								<li><a href="#"><i class="icon_pencil-edit"></i> Admin</a></li>
-								<li><a href="#"><i class="icon_comment_alt"></i> (14) Comments</a></li>
+								<li>
+									<div class="fb-like" data-href="{{ route('train.post.detail', ['slug' => str_slug($post->title), 'id' => $post->id]) }}" data-width="" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+								</li>
 							</ul>
 						</div>
 						<!-- /post meta -->
 						<div class="post-content">
-							<div class="dropcaps">
-								<p>Aorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+							<div>
+								{!! $post->detail !!}
 							</div>
-
-							<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
 						</div>
 						<!-- /post -->
 					</div>
 					<!-- /single-post -->
 
-					<div id="comments">
-						<h5>Comments</h5>
-						<ul>
-							<li>
-								<div class="avatar">
-									<a href="#"><img src="/templates/train/img/avatar1.jpg" alt="">
-									</a>
-								</div>
-								<div class="comment_right clearfix">
-									<div class="comment_info">
-										By <a href="#">Anna Smith</a><span>|</span>25/10/2019<span>|</span><a href="#">Reply</a>
-									</div>
-									<p>
-										Nam cursus tellus quis magna porta adipiscing. Donec et eros leo, non pellentesque arcu. Curabitur vitae mi enim, at vestibulum magna. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed sit amet sem a urna rutrumeger fringilla. Nam vel enim ipsum, et congue ante.
-									</p>
-								</div>
-								<ul class="replied-to">
-									<li>
-										<div class="avatar">
-											<a href="#"><img src="/templates/train/img/avatar2.jpg" alt="">
-											</a>
-										</div>
-										<div class="comment_right clearfix">
-											<div class="comment_info">
-												By <a href="#">Anna Smith</a><span>|</span>25/10/2019<span>|</span><a href="#">Reply</a>
-											</div>
-											<p>
-												Nam cursus tellus quis magna porta adipiscing. Donec et eros leo, non pellentesque arcu. Curabitur vitae mi enim, at vestibulum magna. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed sit amet sem a urna rutrumeger fringilla. Nam vel enim ipsum, et congue ante.
-											</p>
-											<p>
-												Aenean iaculis sodales dui, non hendrerit lorem rhoncus ut. Pellentesque ullamcorper venenatis elit idaipiscingi Duis tellus neque, tincidunt eget pulvinar sit amet, rutrum nec urna. Suspendisse pretium laoreet elit vel ultricies. Maecenas ullamcorper ultricies rhoncus. Aliquam erat volutpat.
-											</p>
-										</div>
-										<ul class="replied-to">
-											<li>
-												<div class="avatar">
-													<a href="#"><img src="/templates/train/img/avatar2.jpg" alt="">
-													</a>
-												</div>
-												<div class="comment_right clearfix">
-													<div class="comment_info">
-														By <a href="#">Anna Smith</a><span>|</span>25/10/2019<span>|</span><a href="#">Reply</a>
-													</div>
-													<p>
-														Nam cursus tellus quis magna porta adipiscing. Donec et eros leo, non pellentesque arcu. Curabitur vitae mi enim, at vestibulum magna. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed sit amet sem a urna rutrumeger fringilla. Nam vel enim ipsum, et congue ante.
-													</p>
-													<p>
-														Aenean iaculis sodales dui, non hendrerit lorem rhoncus ut. Pellentesque ullamcorper venenatis elit idaipiscingi Duis tellus neque, tincidunt eget pulvinar sit amet, rutrum nec urna. Suspendisse pretium laoreet elit vel ultricies. Maecenas ullamcorper ultricies rhoncus. Aliquam erat volutpat.
-													</p>
-												</div>
-											</li>
-										</ul>
-									</li>
-								</ul>
-							</li>
-							<li>
-								<div class="avatar">
-									<a href="#"><img src="/templates/train/img/avatar3.jpg" alt="">
-									</a>
-								</div>
-
-								<div class="comment_right clearfix">
-									<div class="comment_info">
-										By <a href="#">Anna Smith</a><span>|</span>25/10/2019<span>|</span><a href="#">Reply</a>
-									</div>
-									<p>
-										Cursus tellus quis magna porta adipiscin
-									</p>
-								</div>
-							</li>
-						</ul>
-					</div>
-
-					<hr>
-
-					<h5>Leave a Comment</h5>
-					<form>
-						<div class="form-group">
-							<input type="text" name="name" id="name2" class="form-control" placeholder="Name">
-						</div>
-						<div class="form-group">
-							<input type="text" name="email" id="email2" class="form-control" placeholder="Email">
-						</div>
-						<div class="form-group">
-							<input type="text" name="email" id="website3" class="form-control" placeholder="Website">
-						</div>
-						<div class="form-group">
-							<textarea class="form-control" name="comments" id="comments2" rows="6" placeholder="Message Below"></textarea>
-						</div>
-						<div class="form-group">
-							<button type="submit" id="submit2" class="btn_1 rounded add_bottom_30"> Submit</button>
-						</div>
-					</form>
 				</div>
 				<!-- /col -->
 
@@ -136,64 +42,37 @@
 					<div class="widget">
 						<form>
 							<div class="form-group">
-								<input type="text" name="search" id="search" class="form-control" placeholder="Search...">
+								<input type="text" name="search" id="search" class="form-control" placeholder="Tìm kiếm bài viết...">
 							</div>
-							<button type="submit" id="submit" class="btn_1 rounded"> Search</button>
+							<button type="submit" id="submit" class="btn_1 rounded"> Tìm kiếm</button>
 						</form>
 					</div>
 					<!-- /widget -->
 					<div class="widget">
 						<div class="widget-title">
-							<h4>Recent Posts</h4>
+							<h4>Tin tức hot</h4>
 						</div>
 						<ul class="comments-list">
+							@foreach($rands as $rand)
 							<li>
 								<div class="alignleft">
-									<a href="#0"><img src="/templates/train/img/blog-5.jpg" alt=""></a>
+									<a href="{{ route('train.post.detail', ['slug' => str_slug($rand->title), 'id' => $rand->id]) }}"><img src="/upload/{{ $rand->picture }}" alt="{{ $rand->title }}"></a>
 								</div>
-								<small>11.08.2016</small>
-								<h3><a href="#" title="">Verear qualisque ex minimum...</a></h3>
+								<small>{{ date_format($rand->created_at, 'd-m-Y') }}</small>
+								<h3><a href="{{ route('train.post.detail', ['slug' => str_slug($rand->title), 'id' => $rand->id]) }}" title="{{ $rand->title }}">{{ $rand->title }}</a></h3>
 							</li>
-							<li>
-								<div class="alignleft">
-									<a href="#0"><img src="/templates/train/img/blog-6.jpg" alt=""></a>
-								</div>
-								<small>11.08.2016</small>
-								<h3><a href="#" title="">Verear qualisque ex minimum...</a></h3>
-							</li>
-							<li>
-								<div class="alignleft">
-									<a href="#0"><img src="/templates/train/img/blog-4.jpg" alt=""></a>
-								</div>
-								<small>11.08.2016</small>
-								<h3><a href="#" title="">Verear qualisque ex minimum...</a></h3>
-							</li>
+							@endforeach
 						</ul>
 					</div>
 					<!-- /widget -->
 					<div class="widget">
 						<div class="widget-title">
-							<h4>Blog Categories</h4>
-						</div>
-						<ul class="cats">
-							<li><a href="#">Admissions <span>(12)</span></a></li>
-							<li><a href="#">News <span>(21)</span></a></li>
-							<li><a href="#">Events <span>(44)</span></a></li>
-							<li><a href="#">Focus in the lab <span>(31)</span></a></li>
-						</ul>
-					</div>
-					<!-- /widget -->
-					<div class="widget">
-						<div class="widget-title">
-							<h4>Popular Tags</h4>
+							<h4>Tags</h4>
 						</div>
 						<div class="tags">
-							<a href="#">Information tecnology</a>
-							<a href="#">Students</a>
-							<a href="#">Community</a>
-							<a href="#">Carreers</a>
-							<a href="#">Literature</a>
-							<a href="#">Seminars</a>
+							<a href="{{ route('train.index.banggia') }}">Bảng giá vé</a>
+							<a href="{{ route('train.index.index') }}">Tìm kiếm vé tàu</a>
+							<a href="#">Du lịch Lý Sơn</a>
 						</div>
 					</div>
 					<!-- /widget -->
@@ -205,4 +84,15 @@
 		<!-- /container -->
 	</main>
 	<!--/main-->
+@stop
+@section('meta')
+    <title>{{ $post->title }}</title>
+    <meta name="keywords" content="{{ $post->keywords }}">
+    <meta name="news_keywords" content="{{ $post->keywords }}">
+    <meta name="description" content="{{ $post->description }}">
+    <meta property="og:title" itemprop="name" content="{{ $post->title }}">    
+    <meta property="og:url" itemprop="url" content="{{ route('train.index.banggia') }}">
+    <meta property="og:description" content="{{ $post->description }}">
+    <meta content="/upload/{{ $post->picture }}" property="og:image" itemprop="thumbnailUrl" />
+    <meta rel="canonical" href="{{ route('train.post.detail', ['slug' => str_slug($post->title), 'id' => $post->id]) }}" />
 @stop

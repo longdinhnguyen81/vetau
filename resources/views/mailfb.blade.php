@@ -15,16 +15,19 @@
                 <span style="font-weight: 700; font-size: 32px; color: #b7bdc1;">Đặt vé tàu thành công</span>
             </div>
             <div style="border-top: 3px solid #32a067; color: #525c65; padding: 10px; background: #fff;">
-
                 <p style="margin: 5px 0;color: #525c65">Xin chào bạn {{ $name }}</p>
-                <p style="margin: 5px 0;color: #525c65">Bạn đã đặt {{ $people }} vé tàu từ {{ $train_from }} vào thời gian {{ $time }} ngày {{ $date }}</p>
+                <p style="margin: 5px 0;color: #525c65">Bạn đã đặt {{ $people }} vé tàu từ {{ $train_from }} vào thời gian {{ $time }} ngày {{ date_format($date, 'd-m-Y') }}</p>
                 <p style="margin: 5px 0;color: #525c65">Hình thức thanh toán của bạn là {{ $type }}</p>
                 <p style="margin: 5px 0;color: #525c65">Số tiền bạn phải thanh toán là {{ number_format($people*$cost,0,',','.') }} VND</p>
+
                 <p style="margin: 5px 0;color: #525c65">Quý khách vui lòng chuyển khoản trực tiếp vào số tài khoản bên dưới</p>
                 <strong>Ngân hàng Vietcombank</strong>
                 <p style="margin: 5px 0;color: #525c65">Chủ TK: Nguyễn Minh Tài</p>
                 <p style="margin: 5px 0;color: #525c65">STK: 0041000340980</p>
-                <p style="margin: 5px 0;color: #525c65">Chi nhánh: VCB Liên Chiểu - Đà Nẵng</p>
+                <p style="margin: 5px 0;color: #525c65">Chi nhánh: Đà Nẵng</p>
+                <p style="margin: 5px 0;color: #525c65">Chủ TK: Trần Thị Kiều Oanh</p>
+                <p style="margin: 5px 0;color: #525c65">STK: 0041001063937</p>
+                <p style="margin: 5px 0;color: #525c65">Chi nhánh: Đà Nẵng</p>
                 <strong>Ngân hàng MB Quân đội</strong>
                 <p style="margin: 5px 0;color: #525c65">Chủ TK: CTY TNHH DU LỊCH VÀ THƯƠNG MẠI HOÀNG PHÚC</p>
                 <p style="margin: 5px 0;color: #525c65">STK: 3011101676768 </p>
@@ -32,6 +35,8 @@
                 <strong>Ví điện tử MOMO</strong>
                 <p style="margin: 5px 0;color: #525c65">Chủ TK: Nguyễn Minh Tài</p>
                 <p style="margin: 5px 0;color: #525c65">SĐT: 0978175506</p>
+                <p style="margin: 5px 0;color: #525c65">Chủ TK: Trần Thị Kiều Oanh</p>
+                <p style="margin: 5px 0;color: #525c65">SĐT: 0905011288</p>
 
                 <strong>Nội dung chuyển khoản: {{ $id }}</strong>
                 <p style="margin: 30px 0;"><a style="display: block; padding: 10px; background: #32a067; max-width: 350px; text-align: center; color: #fff; text-decoration: none; margin: 0 auto; font-weight: 700; font-size: 16px;" href="https://muavetaulyson.com">Quay lại trang web</a></p>

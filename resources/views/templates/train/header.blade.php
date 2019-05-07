@@ -3,18 +3,19 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
+	<!-- Basic -->
+	<meta charset="utf-8">
+    <link rel="icon" type="image/png" href="/templates/train/img/apple-touch-icon-57x57-precomposed.png">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Mobile Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
     @yield('meta')
     <!-- GOOGLE WEB FONT -->
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <!-- BASE CSS -->
     <link href="/templates/train/css/bootstrap.min.css" rel="stylesheet">
     <link href="/templates/train/css/style.css" rel="stylesheet">
     <link href="/templates/train/css/vendors.css" rel="stylesheet">
-
-    <!-- ALTERNATIVE COLORS CSS -->
-    <link href="#" id="colors" rel="stylesheet">
 
     <link href="/templates/train/css/tables.css" rel="stylesheet">
     <link href="/templates/train/css/blog.css" rel="stylesheet">
@@ -50,18 +51,16 @@
             <!-- /Page Preload -->
             <div id="logo">
                 <a href="/">
-                    <img src="/templates/train/img/logo.png" width="150" height="36" data-retina="true" alt="" class="logo_normal">
-                    <img src="/templates/train/img/logo_sticky.png" width="150" height="36" data-retina="true" alt="" class="logo_sticky">
+                    <img src="/templates/train/img/logo.png" width="150" height="36" data-retina="true" alt="Mua vé tàu đi Lý Sơn" class="logo_normal">
+                    <img src="/templates/train/img/logo_sticky.png" width="150" height="36" data-retina="true" alt="Mua vé tàu đi Lý Sơn" class="logo_sticky">
                 </a>
             </div>
             <ul id="top_menu">
-                <li><a href="{{ route('train.cart.cart') }}" class="cart-menu-btn" title="Cart"><strong>
                     @if(Session::get('cart'))
-                        {{ count(Session::get('cart')) }}
+                        <li><a href="{{ route('train.cart.cart') }}" class="cart-menu-btn" title="Cart"><strong>{{ count(Session::get('cart')) }}</strong></a></li>
                     @else
-                        0
+                        <li><a href="{{ route('train.index.index') }}" class="cart-menu-btn" title="Cart"><strong>0</strong></a></li>
                     @endif
-                </strong></a></li>
             </ul>
             <!-- /top_menu -->
             <a href="#menu" class="btn_mobile">
